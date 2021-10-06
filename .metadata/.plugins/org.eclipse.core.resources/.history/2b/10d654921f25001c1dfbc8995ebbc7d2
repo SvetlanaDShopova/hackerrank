@@ -1,0 +1,16 @@
+package com.sds.challenges;
+
+/**
+ * 
+ * @author svetl
+ *
+ */
+public class JavaStringsIntroduction {
+
+   
+    public static void main(String[] args) {
+       
+
+    }
+
+}

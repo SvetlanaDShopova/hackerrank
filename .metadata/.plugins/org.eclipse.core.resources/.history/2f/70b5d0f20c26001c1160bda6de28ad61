@@ -1,0 +1,44 @@
+/**
+ * 
+ */
+package com.sds.challenges;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * @author svetl
+ *
+ */
+public class TeamSkils {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+
+    }
+    
+    public static int countMaximumTeam(List<Integer> skill, int teamSize, int maxDiff) {
+        int numberTeams = 0;
+        if(skill.size() == teamSize ) {
+            Integer min = skill.stream().mapToInt(v ->v).min().orElse(0);
+            Integer max = skill.stream().mapToInt(v ->v).min().orElse(0);
+            
+            if((max-min) <=  maxDiff) {
+                numberTeams = 1;
+            }            
+        }
+        
+        List<List<Integer>> finalList  = new ArrayList<>();
+        
+        
+        return numberTeams;
+    }
+    
+    private static void perm(List<List<Integer>> finalList, List<Integer> list, int teamSize, int maxDiff) {
+        
+    }
+
+}

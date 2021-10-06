@@ -1,0 +1,3 @@
+INDEX VERSION 1.131+D:\learn_spaces\hackerrank\hackerrank\.metadata\.plugins\org.eclipse.jdt.core
+4088832729.index
+2603803082.index

@@ -1,0 +1,52 @@
+/**
+ * 
+ */
+package com.sds.challenges;
+
+import java.util.Scanner;
+
+/**
+ * @author svetl
+ *
+ */
+public class JavaSubstringComparisons {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+//        Scanner in = new Scanner(System.in);
+//        String input = in.next();
+//        int substringLength = in.nextInt();
+        
+        String input = "welcometojava";
+        int substringLength = 3;
+        
+        String result = getSmallestAndLargest(input, substringLength);
+        System.out.println(result);
+    }
+
+    public static String getSmallestAndLargest(String input, int substringLength) {
+        String result = "";
+        String smallest = "";
+        String largest = "";
+        int inputLength = input.length();
+        
+        
+        while(input.length() > substringLength) {
+            String sub = input.substring(0,substringLength);
+            input = input.substring(input.length()-substringLength);
+            
+            if(sub.compareTo(largest) >= 0) {
+                largest = sub;
+            } else if (sub.compareTo(smallest) < 0) {
+                smallest = sub;
+            }
+                
+        }
+        
+       
+        result = smallest + "\n" + largest;
+        return result;
+    }
+}

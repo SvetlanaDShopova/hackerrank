@@ -1,0 +1,31 @@
+/**
+ * 
+ */
+package com.sds.challenges;
+
+import java.util.Scanner;
+
+/**
+ * @author svetl
+ *
+ */
+public class JavaSubstringComparisons {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        String input = in.next();
+        int substringLength = in.nextInt();
+        
+        String result = getSmallestAndLargest(input, substringLength);
+    }
+
+    public static String getSmallestAndLargest(String input, int substringLength) {
+        String result = "";
+        
+        
+        return result;
+    }
+}

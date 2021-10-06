@@ -1,0 +1,14 @@
+package com.sds.challenges;
+
+/**
+ * @author Svetlana Shopova
+ *
+ */
+public class JavaSubstring {
+  
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+
+    }
+
+}

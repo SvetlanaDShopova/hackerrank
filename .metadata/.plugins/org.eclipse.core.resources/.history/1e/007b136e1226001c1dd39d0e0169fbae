@@ -1,0 +1,85 @@
+/**
+ * 
+ */
+package com.sds.challenges;
+
+
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+/**
+ * @author svetl
+ *
+ */
+public class TeamSkils {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+        List<Integer> skils = List.of(5,1,2,1,4,5);
+        System.out.println(countMaximumTeam(skils,3,2));
+    }
+    
+    public static int countMaximumTeam(List<Integer> skill, int teamSize, int maxDiff) {
+        int numberTeams = 0;
+        if(skill.size() == teamSize ) {
+            Integer min = skill.stream().mapToInt(v ->v).min().orElse(0);
+            Integer max = skill.stream().mapToInt(v ->v).min().orElse(0);
+            
+            if((max-min) <=  maxDiff) {
+                numberTeams = 1;
+            }            
+        }
+        
+        List<List<Integer>> finalList = new ArrayList<>();
+        finalList = perm( skill);
+        
+        for(List<Integer> l : finalList) {
+            
+            if(l.size() == teamSize) {
+                System.out.println("Size:" + l.size());
+                int min =l.stream().mapToInt(v ->v).min().orElse(0);
+                int max = l.stream().mapToInt(v ->v).min().orElse(0);
+                
+                if((max-min) == maxDiff) {
+                    numberTeams +=1;
+                }
+            }
+           
+        }
+        
+        return numberTeams;
+    }
+    
+    private static List<List<Integer>> perm( List<Integer> list) {
+        List<List<Integer>> fList = new ArrayList<List<Integer>>();
+        if (list.isEmpty()) {
+            fList.add(new ArrayList<Integer>());
+            return fList;
+        }
+        List<Integer> l = new ArrayList<Integer>(list);
+        Integer head = list.get(0);
+        List<Integer> rest = new ArrayList<Integer>(list.subList(1, list.size()));
+        for (List<Integer> set : perm(rest)) {
+            List<Integer> newSet = new ArrayList<Integer>();
+            newSet.add(head);
+            newSet.addAll(set);
+          
+           fList.add(newSet);
+           
+          
+           fList.add(set);
+            
+            
+        }
+        
+        
+        return fList;
+    }
+
+}
